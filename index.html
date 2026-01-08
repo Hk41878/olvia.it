@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YOURDOMAIN.COM is for sale</title>
+  <meta name="description" content="Premium domain for sale. Make an offer and get this domain today." />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="YOURDOMAIN.COM is for sale" />
+  <meta property="og:description" content="Premium domain for sale. Make an offer and get this domain today." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="bg"></div>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="#" aria-label="Domain for sale">
+        <span class="brand__dot"></span>
+        <span class="brand__text" data-i18n="brand">Domain Marketplace</span>
+      </a>
+
+      <div class="topbar__actions">
+        <button class="lang" id="langBtn" type="button" aria-label="Change language">
+          <span class="lang__pill" id="langPill">EN</span>
+          <span class="lang__label" data-i18n="language">English</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap hero">
+    <section class="hero__card">
+      <div class="hero__top">
+        <div class="badge" data-i18n="badge">Premium Domain Available</div>
+        <div class="domain" id="domainText">YOURDOMAIN.COM</div>
+        <h1 class="headline" data-i18n="headline">
+          This domain is for sale.
+        </h1>
+        <p class="subhead" data-i18n="subhead">
+          A short, brandable domain that’s perfect for a startup, business, or personal brand.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="tile">
+          <div class="tile__icon">⚡</div>
+          <div class="tile__title" data-i18n="t1_title">Fast to remember</div>
+          <div class="tile__text" data-i18n="t1_text">Clean, simple, and easy to type.</div>
+        </div>
+
+        <div class="tile">
+          <div class="tile__icon">🎯</div>
+          <div class="tile__title" data-i18n="t2_title">Brand-ready</div>
+          <div class="tile__text" data-i18n="t2_text">Ideal for ads, social, and SEO.</div>
+        </div>
+
+        <div class="tile">
+          <div class="tile__icon">🛡️</div>
+          <div class="tile__title" data-i18n="t3_title">Secure transfer</div>
+          <div class="tile__text" data-i18n="t3_text">Safe ownership transfer via trusted platforms.</div>
+        </div>
+      </div>
+
+      <div class="cta">
+        <div class="cta__left">
+          <div class="cta__title" data-i18n="cta_title">Interested?</div>
+          <div class="cta__text" data-i18n="cta_text">
+            Send your best offer and I’ll reply quickly.
+          </div>
+        </div>
+
+        <div class="cta__right">
+          <!-- Replace email + WhatsApp if you want -->
+          <a class="btn btn--primary" id="emailBtn" href="mailto:yourmail@example.com?subject=Offer%20for%20YOURDOMAIN.COM&body=Hi,%20I%20want%20to%20make%20an%20offer%20for%20YOURDOMAIN.COM.%0A%0AOffer%20price:%20%0AName:%20%0ACompany:%20%0AContact:%20" data-i18n="btn_email">
+            Email Offer
+          </a>
+          <button class="btn btn--ghost" id="copyBtn" type="button" data-i18n="btn_copy">
+            Copy Domain
+          </button>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <section class="form">
+        <h2 class="form__title" data-i18n="form_title">Quick Offer Form</h2>
+        <p class="form__desc" data-i18n="form_desc">
+          Fill this in and copy the message. You can paste it in email/WhatsApp.
+        </p>
+
+        <div class="form__grid">
+          <label class="field">
+            <span class="field__label" data-i18n="f_name">Your Name</span>
+            <input class="field__input" id="name" type="text" placeholder="John / Marco" />
+          </label>
+
+          <label class="field">
+            <span class="field__label" data-i18n="f_email">Email</span>
+            <input class="field__input" id="email" type="email" placeholder="you@example.com" />
+          </label>
+
+          <label class="field">
+            <span class="field__label" data-i18n="f_offer">Offer (EUR)</span>
+            <input class="field__input" id="offer" type="number" min="0" step="50" placeholder="500" />
+          </label>
+
+          <label class="field">
+            <span class="field__label" data-i18n="f_use">Intended use</span>
+            <input class="field__input" id="use" type="text" placeholder="Startup / Restaurant / App" />
+          </label>
+        </div>
+
+        <div class="form__actions">
+          <button class="btn btn--primary" id="generateBtn" type="button" data-i18n="btn_generate">
+            Generate Message
+          </button>
+          <button class="btn btn--ghost" id="copyMsgBtn" type="button" data-i18n="btn_copymsg">
+            Copy Message
+          </button>
+        </div>
+
+        <textarea class="message" id="message" rows="6" readonly></textarea>
+
+        <div class="note" data-i18n="note">
+          Tip: If you want, add “Buy Now” price in the text later. Keeping it “Make an offer” often increases inquiries.
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__left">
+          <span data-i18n="footer_left">©</span>
+          <span id="year"></span>
+          <span class="sep">•</span>
+          <span data-i18n="footer_mid">Domain listed privately</span>
+        </div>
+        <div class="footer__right">
+          <span class="status" id="status" aria-live="polite"></span>
+        </div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
