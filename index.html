@@ -1,9 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Viewport (auto-zoom disabled) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
   <title>YOURDOMAIN.COM is for sale</title>
   <meta name="description" content="Premium domain for sale. Make an offer and get this domain today." />
   <meta name="robots" content="index,follow" />
@@ -17,6 +19,7 @@
 </head>
 
 <body>
+
   <div class="bg"></div>
 
   <header class="topbar">
@@ -37,12 +40,16 @@
 
   <main class="wrap hero">
     <section class="hero__card">
+
       <div class="hero__top">
         <div class="badge" data-i18n="badge">Premium Domain Available</div>
+
         <div class="domain" id="domainText">YOURDOMAIN.COM</div>
+
         <h1 class="headline" data-i18n="headline">
           This domain is for sale.
         </h1>
+
         <p class="subhead" data-i18n="subhead">
           A short, brandable domain that’s perfect for a startup, business, or personal brand.
         </p>
@@ -77,10 +84,12 @@
         </div>
 
         <div class="cta__right">
-          <!-- Replace email + WhatsApp if you want -->
-          <a class="btn btn--primary" id="emailBtn" href="mailto:yourmail@example.com?subject=Offer%20for%20YOURDOMAIN.COM&body=Hi,%20I%20want%20to%20make%20an%20offer%20for%20YOURDOMAIN.COM.%0A%0AOffer%20price:%20%0AName:%20%0ACompany:%20%0AContact:%20" data-i18n="btn_email">
+          <a class="btn btn--primary" id="emailBtn"
+             href="mailto:yourmail@example.com?subject=Offer%20for%20YOURDOMAIN.COM&body=Hi,%20I%20want%20to%20make%20an%20offer%20for%20YOURDOMAIN.COM.%0A%0AOffer%20price:%20%0AName:%20%0ACompany:%20%0AContact:%20"
+             data-i18n="btn_email">
             Email Offer
           </a>
+
           <button class="btn btn--ghost" id="copyBtn" type="button" data-i18n="btn_copy">
             Copy Domain
           </button>
@@ -91,6 +100,7 @@
 
       <section class="form">
         <h2 class="form__title" data-i18n="form_title">Quick Offer Form</h2>
+
         <p class="form__desc" data-i18n="form_desc">
           Fill this in and copy the message. You can paste it in email/WhatsApp.
         </p>
@@ -98,22 +108,22 @@
         <div class="form__grid">
           <label class="field">
             <span class="field__label" data-i18n="f_name">Your Name</span>
-            <input class="field__input" id="name" type="text" placeholder="John / Marco" />
+            <input class="field__input" id="name" type="text" placeholder="John / Marco">
           </label>
 
           <label class="field">
             <span class="field__label" data-i18n="f_email">Email</span>
-            <input class="field__input" id="email" type="email" placeholder="you@example.com" />
+            <input class="field__input" id="email" type="email" placeholder="you@example.com">
           </label>
 
           <label class="field">
             <span class="field__label" data-i18n="f_offer">Offer (EUR)</span>
-            <input class="field__input" id="offer" type="number" min="0" step="50" placeholder="500" />
+            <input class="field__input" id="offer" type="number" min="0" step="50" placeholder="500">
           </label>
 
           <label class="field">
             <span class="field__label" data-i18n="f_use">Intended use</span>
-            <input class="field__input" id="use" type="text" placeholder="Startup / Restaurant / App" />
+            <input class="field__input" id="use" type="text" placeholder="Startup / Restaurant / App">
           </label>
         </div>
 
@@ -140,20 +150,22 @@
           <span class="sep">•</span>
           <span data-i18n="footer_mid">Domain listed privately</span>
         </div>
+
         <div class="footer__right">
           <span class="status" id="status" aria-live="polite"></span>
         </div>
       </footer>
+
     </section>
   </main>
 
-<!-- SALE OVERLAY -->
-<div id="saleOverlay">
-  <div class="sale-glass">
-    <img src="sale.png" alt="Sale" />
+  <!-- SALE OVERLAY -->
+  <div id="saleOverlay">
+    <div class="sale-glass">
+      <img src="sale.png" alt="Sale">
+    </div>
   </div>
-</div>
-  
+
   <script src="script.js"></script>
 </body>
 </html>
