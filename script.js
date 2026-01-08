@@ -205,3 +205,22 @@
   // Init
   applyLang("en");
 })();
+
+
+// SALE OVERLAY LOGIC
+(function () {
+  const overlay = document.getElementById("saleOverlay");
+
+  if (!overlay) return;
+
+  // Auto hide after 2 seconds
+  const autoClose = setTimeout(hideOverlay, 2000);
+
+  function hideOverlay() {
+    overlay.classList.add("hide");
+    clearTimeout(autoClose);
+  }
+
+  // Hide on any click or tap
+  overlay.addEventListener("click", hideOverlay);
+})();
