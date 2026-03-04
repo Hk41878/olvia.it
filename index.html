@@ -1,171 +1,194 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain for Sale</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f1f5f9;
+            --text-color: #1e293b;
+        }
 
-  <!-- Viewport (auto-zoom disabled) -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, sans-serif; }
 
-  <title>YOURDOMAIN.COM is for sale</title>
-  <meta name="description" content="Premium domain for sale. Make an offer and get this domain today." />
-  <meta name="robots" content="index,follow" />
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="YOURDOMAIN.COM is for sale" />
-  <meta property="og:description" content="Premium domain for sale. Make an offer and get this domain today." />
-  <meta property="og:type" content="website" />
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            max-width: 450px;
+            width: 100%;
+            text-align: center;
+        }
 
-  <link rel="stylesheet" href="styles.css" />
+        .badge {
+            background: #dcfce7;
+            color: #166534;
+            padding: 5px 15px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        h1 { font-size: 1.8rem; margin-bottom: 8px; color: var(--primary-color); word-break: break-all; }
+        p { color: #64748b; margin-bottom: 25px; font-size: 15px; }
+
+        .form-group { text-align: left; margin-bottom: 15px; }
+        label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 14px; }
+        
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        input:focus, select:focus, textarea:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+
+        .flex-row { display: flex; gap: 10px; }
+        .flex-row .currency { width: 35%; }
+        .flex-row .amount { width: 65%; }
+
+        .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #475569;
+    white-space: nowrap;
+}
+
+.checkbox-group input {
+    width: auto;
+    flex-shrink: 0;
+}
+
+        #customMsgArea { display: none; margin-top: 10px; }
+
+        .btn {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn:hover { background: #1d4ed8; }
+
+        footer { margin-top: 25px; font-size: 13px; color: #94a3b8; border-top: 1px solid #f1f5f9; padding-top: 15px; }
+    </style>
 </head>
-
 <body>
 
-  <div class="bg"></div>
+<div class="card">
+    <div class="badge">Premium Domain</div>
+    <h1 id="domainName">Loading...</h1>
+    <p>Direct purchase offer for this domain.</p>
 
-  <header class="topbar">
-    <div class="wrap topbar__inner">
-      <a class="brand" href="#" aria-label="Domain for sale">
-        <span class="brand__dot"></span>
-        <span class="brand__text" data-i18n="brand">Domain Marketplace</span>
-      </a>
-
-      <div class="topbar__actions">
-        <button class="lang" id="langBtn" type="button" aria-label="Change language">
-          <span class="lang__pill" id="langPill">EN</span>
-          <span class="lang__label" data-i18n="language">English</span>
-        </button>
-      </div>
+    <div class="form-group">
+        <label>Your Full Name</label>
+        <input type="text" id="userName" placeholder="John Doe">
     </div>
-  </header>
 
-  <main class="wrap hero">
-    <section class="hero__card">
-
-      <div class="hero__top">
-        <div class="badge" data-i18n="badge">Premium Domain Available</div>
-
-        <div class="domain" id="domainText">YOURDOMAIN.COM</div>
-
-        <h1 class="headline" data-i18n="headline">
-          This domain is for sale.
-        </h1>
-
-        <p class="subhead" data-i18n="subhead">
-          A short, brandable domain that’s perfect for a startup, business, or personal brand.
-        </p>
-      </div>
-
-      <div class="grid">
-        <div class="tile">
-          <div class="tile__icon">⚡</div>
-          <div class="tile__title" data-i18n="t1_title">Fast to remember</div>
-          <div class="tile__text" data-i18n="t1_text">Clean, simple, and easy to type.</div>
+    <div class="form-group">
+        <label>Proposed Offer</label>
+        <div class="flex-row">
+            <select id="currency" class="currency">
+                <option value="USD">USD ($)</option>
+                <option value="EUR">EURO (€)</option>
+                <option value="INR">INR (₹)</option>
+            </select>
+            <input type="number" id="offerPrice" class="amount" placeholder="Amount">
         </div>
-
-        <div class="tile">
-          <div class="tile__icon">🎯</div>
-          <div class="tile__title" data-i18n="t2_title">Brand-ready</div>
-          <div class="tile__text" data-i18n="t2_text">Ideal for ads, social, and SEO.</div>
-        </div>
-
-        <div class="tile">
-          <div class="tile__icon">🛡️</div>
-          <div class="tile__title" data-i18n="t3_title">Secure transfer</div>
-          <div class="tile__text" data-i18n="t3_text">Safe ownership transfer via trusted platforms.</div>
-        </div>
-      </div>
-
-      <div class="cta">
-        <div class="cta__left">
-          <div class="cta__title" data-i18n="cta_title">Interested?</div>
-          <div class="cta__text" data-i18n="cta_text">
-            Send your best offer and I’ll reply quickly.
-          </div>
-        </div>
-
-        <div class="cta__right">
-          <a class="btn btn--primary" id="emailBtn"
-             href="mailto:yourmail@example.com?subject=Offer%20for%20YOURDOMAIN.COM&body=Hi,%20I%20want%20to%20make%20an%20offer%20for%20YOURDOMAIN.COM.%0A%0AOffer%20price:%20%0AName:%20%0ACompany:%20%0AContact:%20"
-             data-i18n="btn_email">
-            Email Offer
-          </a>
-
-          <button class="btn btn--ghost" id="copyBtn" type="button" data-i18n="btn_copy">
-            Copy Domain
-          </button>
-        </div>
-      </div>
-
-      <div class="divider"></div>
-
-      <section class="form">
-        <h2 class="form__title" data-i18n="form_title">Quick Offer Form</h2>
-
-        <p class="form__desc" data-i18n="form_desc">
-          Fill this in and copy the message. You can paste it in email/WhatsApp.
-        </p>
-
-        <div class="form__grid">
-          <label class="field">
-            <span class="field__label" data-i18n="f_name">Your Name</span>
-            <input class="field__input" id="name" type="text" placeholder="John / Marco">
-          </label>
-
-          <label class="field">
-            <span class="field__label" data-i18n="f_email">Email</span>
-            <input class="field__input" id="email" type="email" placeholder="you@example.com">
-          </label>
-
-          <label class="field">
-            <span class="field__label" data-i18n="f_offer">Offer (EUR)</span>
-            <input class="field__input" id="offer" type="number" min="0" step="50" placeholder="1489€">
-          </label>
-
-          <label class="field">
-            <span class="field__label" data-i18n="f_use">Intended use</span>
-            <input class="field__input" id="use" type="text" placeholder="Startup / Restaurant / App">
-          </label>
-        </div>
-
-        <div class="form__actions">
-          <button class="btn btn--primary" id="generateBtn" type="button" data-i18n="btn_generate">
-            Generate Message
-          </button>
-          <button class="btn btn--ghost" id="copyMsgBtn" type="button" data-i18n="btn_copymsg">
-            Copy Message
-          </button>
-        </div>
-
-        <textarea class="message" id="message" rows="6" readonly></textarea>
-
-        <div class="note" data-i18n="note">
-          Tip: If you want, add “Buy Now” price in the text later. Keeping it “Make an offer” often increases inquiries.
-        </div>
-      </section>
-
-      <footer class="footer">
-        <div class="footer__left">
-          <span data-i18n="footer_left">©</span>
-          <span id="year"></span>
-          <span class="sep">•</span>
-          <span data-i18n="footer_mid">Domain listed privately</span>
-        </div>
-
-        <div class="footer__right">
-          <span class="status" id="status" aria-live="polite"></span>
-        </div>
-      </footer>
-
-    </section>
-  </main>
-
-  <!-- SALE OVERLAY -->
-  <div id="saleOverlay">
-    <div class="sale-glass">
-      <img src="sale.png" alt="Sale">
     </div>
-  </div>
 
-  <script src="script.js"></script>
+    <label class="checkbox-group">
+        <input type="checkbox" id="msgToggle" onclick="toggleMessage()"> Add a personal message?
+    </label>
+
+    <div id="customMsgArea" class="form-group">
+        <textarea id="customMessage" rows="3" placeholder="Write your message here..."></textarea>
+    </div>
+
+    <button class="btn" onclick="sendEmail()">Submit Offer</button>
+
+    <footer>
+        Inquiries: <strong>info@vadhwa.com</strong>
+    </footer>
+</div>
+
+<script>
+    // Automatically detect domain
+    const currentDomain = window.location.hostname || "this domain";
+    document.getElementById('domainName').innerText = currentDomain;
+
+    // Show/Hide Message Area
+    function toggleMessage() {
+        const msgArea = document.getElementById('customMsgArea');
+        const checkbox = document.getElementById('msgToggle');
+        msgArea.style.display = checkbox.checked ? 'block' : 'none';
+    }
+
+    function sendEmail() {
+        const name = document.getElementById('userName').value.trim();
+        const currency = document.getElementById('currency').value;
+        const price = document.getElementById('offerPrice').value;
+        const isMsgChecked = document.getElementById('msgToggle').checked;
+        const userMsg = document.getElementById('customMessage').value.trim();
+        
+        const emailTo = "info@vadhwa.com";
+        
+        if(!name || !price) {
+            alert("Please provide your name and an offer amount.");
+            return;
+        }
+
+        // Prepare message content
+        let messageBody = `Hello Mr. Vadhwa,\n\n`;
+        messageBody += `I am interested in acquiring the domain: ${currentDomain}\n`;
+        messageBody += `My Name: ${name}\n`;
+        messageBody += `My Offer: ${price} ${currency}\n\n`;
+        
+        if(isMsgChecked && userMsg) {
+            messageBody += `Additional Message:\n"${userMsg}"\n\n`;
+        } else {
+            messageBody += `I would like to discuss the next steps for the purchase.\n\n`;
+        }
+        
+        messageBody += `Looking forward to your reply.\nRegards,\n${name}`;
+
+        const subject = `Purchase Offer: ${currentDomain} (${price} ${currency})`;
+        
+        // Final mailto URL
+        window.location.href = `mailto:${emailTo}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(messageBody)}`;
+    }
+</script>
+
 </body>
 </html>
